@@ -1,0 +1,17 @@
+@import "./styles/constants.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap");
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	background-color: $background-color;
+	color: $font-color;
+	font-family: "Titillium Web", sans-serif;
+	height: 100vh;
+}
+
+a {
+	text-decoration: none;
+	color: $font-color;
+}

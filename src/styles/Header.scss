@@ -1,0 +1,82 @@
+@import "./constants.scss";
+
+.page-header {
+	background-color: #101010;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60px;
+	z-index: 10;
+
+	.logo {
+		width: 120px;
+		margin-left: 50px;
+		padding-top: 7px;
+
+		img {
+			width: inherit;
+		}
+	}
+
+	.title {
+		position: absolute;
+		font-size: 24px;
+		font-weight: 600;
+		width: 100%;
+		text-align: center;
+		z-index: 11;
+	}
+
+	.menu {
+		display: flex;
+		gap: 40px;
+		margin-right: 50px;
+		z-index: 12;
+
+		.menu-button {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			justify-content: center;
+
+			.button-icon {
+				display: flex;
+				font-size: 20px;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		.dropdown {
+			position: absolute;
+			top: 60px;
+			right: 0;
+			flex-direction: column;
+			background-color: #101010;
+			display: none;
+
+			.dropdown-menu-button {
+				display: flex;
+				gap: 10px;
+				align-items: center;
+				justify-content: center;
+				padding: 20px 40px;
+
+				.dropdown-button-icon {
+					display: flex;
+					font-size: 20px;
+				}
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+
+			&.active {
+				display: flex;
+			}
+		}
+	}
+}
