@@ -1,10 +1,33 @@
 .landing {
 	height: inherit;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 100px 0;
+
+	.welcome-text-wrapper {
+		padding: 60px 50px;
+		flex: 1;
+
+		.title {
+			font-size: 55px;
+			font-family: "Montserrat";
+			font-weight: 600;
+			margin-bottom: 30px;
+		}
+
+		.text {
+			display: flex;
+			align-items: center;
+			font-size: 32px;
+			margin-top: 10px;
+
+			svg {
+				margin: 0 5px;
+			}
+
+			&.arrow-left {
+				margin-top: 220px;
+			}
+		}
+	}
 
 	.big-cards-container {
 		display: flex;
@@ -23,5 +46,19 @@
 		margin-top: 50px;
 		flex-wrap: wrap;
 		padding: 0 100px;
+	}
+
+	.right-image {
+		height: 100vh;
+		flex: 1;
+		max-width: 800px;
+		opacity: 0.3;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+
+		img {
+			height: 100%;
+		}
 	}
 }

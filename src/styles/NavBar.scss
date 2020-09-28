@@ -1,0 +1,104 @@
+@import "constants.scss";
+
+.navbar {
+	position: fixed;
+	background-color: #101010;
+	height: 100vh;
+	width: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 40px;
+
+	.logo {
+		width: 120px;
+		margin-top: 50px;
+
+		img {
+			width: inherit;
+		}
+	}
+
+	.buttons-wrapper {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		.menu-button {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			padding: 15px 20px;
+
+			.button-icon {
+				display: flex;
+				font-size: 22px;
+				margin-left: 50px;
+			}
+
+			.button-label {
+				font-size: 20px;
+			}
+
+			.selected-icon {
+				margin: auto;
+				margin-right: 10px;
+				display: flex;
+				color: #fd3131;
+				font-size: 20px;
+			}
+
+			&.active {
+				background-color: #060606;
+				color: #fd3131;
+			}
+
+			&:hover {
+				cursor: pointer;
+				// color: #ffa9a9;
+				background-color: #060606;
+			}
+		}
+	}
+
+	.bottom-navbar {
+		padding-bottom: 20px;
+	}
+}
+
+.toggled {
+	width: 70px;
+
+	.logo {
+		width: 50px;
+		margin-top: 20px;
+		margin-bottom: 42px;
+
+		img {
+			width: inherit;
+		}
+	}
+
+	.buttons-wrapper {
+		.menu-button {
+			justify-content: center;
+
+			.button-icon {
+				margin-left: 0;
+			}
+
+			.button-label {
+				display: none;
+			}
+
+			.selected-icon {
+				display: none;
+			}
+		}
+	}
+
+	.bottom-navbar {
+		visibility: hidden;
+	}
+}

@@ -50,7 +50,7 @@ export const Calendar = () => {
 								<td className="race-name">
 									{race.round}. {race.raceName}
 								</td>
-								<td className="race-day">{date.format("DD-MM-YYYY")}</td>
+								<td className="race-day">{date.format("DD MMMM")}</td>
 								<td className="race-hour">{date.format("HH:mm")}</td>
 							</tr>
 						);
