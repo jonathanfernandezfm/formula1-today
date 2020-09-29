@@ -1,0 +1,80 @@
+.driver {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+
+	.driver-card {
+		background-color: #151515;
+		display: flex;
+		border-radius: 20px;
+
+		.driver-image {
+			min-width: 400px;
+			min-height: 600px;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			overflow: hidden;
+			border-radius: 20px 0px 0 20px;
+		}
+
+		.driver-info {
+			padding: 30px;
+
+			.name {
+				font-size: 28px;
+
+				span {
+					margin-right: 20px;
+					font-style: italic;
+					font-size: 34px;
+					color: #fd3131;
+					font-weight: 600;
+				}
+			}
+
+			.driver-data-section {
+				display: flex;
+				gap: 40px;
+				margin-top: 15px;
+
+				.column {
+					.row {
+						.label {
+							font-size: 18px;
+							font-weight: 600;
+							font-style: italic;
+						}
+
+						.value {
+							font-weight: 300;
+							font-size: 20px;
+						}
+					}
+				}
+			}
+
+			.last-race {
+				margin-top: 40px;
+				.label {
+					font-size: 20px;
+					font-weight: 600;
+					font-style: italic;
+				}
+
+				.label2 {
+					font-size: 18px;
+					font-weight: 600;
+					font-style: italic;
+				}
+
+				.value {
+					font-weight: 300;
+					font-size: 20px;
+				}
+			}
+		}
+	}
+}

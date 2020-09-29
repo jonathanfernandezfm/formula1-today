@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import Race from "../models/Race";
 import ErgastAPI from "../lib/ErgastAPI";
 import { AiOutlineCheck } from "react-icons/ai";
-import { AiOutlineDoubleRight } from "react-icons/ai";
 
 import "../styles/Calendar.scss";
 import moment from "moment";
 
 export const Calendar = () => {
 	const [races, setRaces] = useState([]);
-	const f1 = new ErgastAPI();
 
 	useEffect(() => {
+		const f1 = new ErgastAPI();
+
 		f1.races().then((response) => {
 			setRaces(response);
 		});
-	}, [true]);
+	}, []);
 
 	return (
 		<div className="calendar">

@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode } from "react";
 import { NavLink } from "react-router-dom";
 
 import { AiOutlineCaretRight } from "react-icons/ai";
@@ -37,8 +37,6 @@ const mainMenuButtons = [
 ];
 
 export const NavBar = ({ toggled, onClick }: NavBarProps) => {
-	const [active, setActive] = useState(0);
-
 	return (
 		<div className={"navbar" + (toggled ? " toggled" : "")}>
 			<div
@@ -55,12 +53,17 @@ export const NavBar = ({ toggled, onClick }: NavBarProps) => {
 			<div className="buttons-wrapper">
 				{mainMenuButtons.map(({ icon, label, link }: MenuButton, index) => {
 					return (
-						<NavLink key={index} exact={true} activeClassName="is-active" to={link}>
-							<div
-								key={index}
-								className={"menu-button"}
-								onClick={() => setActive(index)}
-							>
+						<NavLink
+							key={index}
+							isActive={(match, location) => {
+								if (location.pathname.includes(link) && link !== "/") return true;
+								else if (location.pathname === link) return true;
+								else return false;
+							}}
+							activeClassName="is-active"
+							to={link}
+						>
+							<div key={index} className={"menu-button"}>
 								<div className="button-icon">{icon}</div>
 								<div className="button-label">{label}</div>
 

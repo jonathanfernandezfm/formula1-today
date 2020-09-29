@@ -10,6 +10,7 @@
 	justify-content: space-between;
 	align-items: center;
 	padding-bottom: 40px;
+	transition: all 0.3s;
 
 	.toggle-button {
 		position: absolute;
@@ -29,6 +30,7 @@
 	.logo {
 		width: 120px;
 		margin-top: 50px;
+		transition: all 0.3s;
 
 		img {
 			width: inherit;
@@ -44,6 +46,7 @@
 			.menu-button {
 				background-color: #060606;
 				color: #fd3131;
+				border-left: 2px solid #fd3131;
 
 				.button-label {
 					font-weight: 700;
@@ -60,6 +63,8 @@
 			align-items: center;
 			gap: 20px;
 			padding: 15px 20px;
+			height: 30px;
+			transition: all 0.3s;
 
 			.button-icon {
 				display: flex;

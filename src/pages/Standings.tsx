@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import ErgastAPI from "../lib/ErgastAPI";
 import Standing from "../models/Standing";
 
@@ -6,9 +7,10 @@ import "../styles/Standings.scss";
 
 export const Standings = () => {
 	const [standings, setStandings] = useState([]);
-	const f1 = new ErgastAPI();
+	const history = useHistory();
 
 	useEffect(() => {
+		const f1 = new ErgastAPI();
 		f1.standings()
 			.then((response) => {
 				console.log(response);
@@ -17,7 +19,11 @@ export const Standings = () => {
 			.catch((err) => {
 				console.log(err);
 			});
-	}, [true]);
+	}, []);
+
+	const onRowClick = (driverId: string) => {
+		history.push(`/drivers/${driverId}`);
+	};
 
 	return (
 		<div className="standings">
@@ -40,6 +46,9 @@ export const Standings = () => {
 									"table-row" +
 									(index === 0 ? " first" : index === 1 ? " second" : "")
 								}
+								onClick={() => {
+									onRowClick(standing.Driver.driverId);
+								}}
 							>
 								<td className="position">{standing.positionText}</td>
 								<td
