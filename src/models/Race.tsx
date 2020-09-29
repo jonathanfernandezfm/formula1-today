@@ -8,14 +8,14 @@ export default interface RaceData {
 	url: string;
 }
 
-interface Circuit {
+export interface Circuit {
 	Location: Location;
 	circuitId: string;
 	circuitName: string;
 	url: string;
 }
 
-interface Location {
+export interface Location {
 	country: string;
 	lat: string;
 	locality: string;

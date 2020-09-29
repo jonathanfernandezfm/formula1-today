@@ -1,28 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Race from "../models/Race";
+import ErgastAPI from "../lib/ErgastAPI";
 import { AiOutlineCheck } from "react-icons/ai";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 
 import "../styles/Calendar.scss";
 import moment from "moment";
-import { Console } from "console";
 
 export const Calendar = () => {
-	const [data, setData] = useState([]);
+	const [races, setRaces] = useState([]);
+	const f1 = new ErgastAPI();
 
 	useEffect(() => {
-		fetch(`http://ergast.com/api/f1/current.json`, {
-			method: "GET",
-			headers: new Headers({
-				Accept: "application/json",
-			}),
-		})
-			.then((response) => response.json())
-			.then((response) => {
-				console.log(response.MRData.RaceTable.Races);
-				setData(response.MRData.RaceTable.Races);
-			})
-			.catch((error) => console.log(error));
+		f1.races().then((response) => {
+			setRaces(response);
+		});
 	}, [true]);
 
 	return (
@@ -37,7 +29,7 @@ export const Calendar = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{data.map((race: Race, index) => {
+					{races.map((race: Race, index) => {
 						const date = moment(race.date + " " + race.time);
 
 						return (
@@ -47,11 +39,11 @@ export const Calendar = () => {
 										{date < moment() ? <AiOutlineCheck /> : ""}
 									</div>
 								</td>
-								<td className="race-name">
+								<td>
 									{race.round}. {race.raceName}
 								</td>
-								<td className="race-day">{date.format("DD MMMM")}</td>
-								<td className="race-hour">{date.format("HH:mm")}</td>
+								<td>{date.format("DD MMMM")}</td>
+								<td>{date.format("HH:mm")}</td>
 							</tr>
 						);
 					})}

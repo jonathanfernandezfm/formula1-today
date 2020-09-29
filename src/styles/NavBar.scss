@@ -11,6 +11,21 @@
 	align-items: center;
 	padding-bottom: 40px;
 
+	.toggle-button {
+		position: absolute;
+		background-color: #565656;
+		display: flex;
+		border-radius: 20px;
+		padding: 5px;
+		right: -10.5px;
+		top: 50px;
+
+		&:hover {
+			cursor: pointer;
+			background-color: #fd3131;
+		}
+	}
+
 	.logo {
 		width: 120px;
 		margin-top: 50px;
@@ -25,6 +40,21 @@
 		flex-direction: column;
 		width: 100%;
 
+		a.is-active {
+			.menu-button {
+				background-color: #060606;
+				color: #fd3131;
+
+				.button-label {
+					font-weight: 700;
+				}
+
+				.selected-icon {
+					display: flex;
+				}
+			}
+		}
+
 		.menu-button {
 			display: flex;
 			align-items: center;
@@ -38,20 +68,16 @@
 			}
 
 			.button-label {
+				font-weight: 300;
 				font-size: 20px;
 			}
 
 			.selected-icon {
 				margin: auto;
 				margin-right: 10px;
-				display: flex;
 				color: #fd3131;
 				font-size: 20px;
-			}
-
-			&.active {
-				background-color: #060606;
-				color: #fd3131;
+				display: none;
 			}
 
 			&:hover {
@@ -65,40 +91,45 @@
 	.bottom-navbar {
 		padding-bottom: 20px;
 	}
-}
 
-.toggled {
-	width: 70px;
+	&.toggled {
+		width: 70px;
 
-	.logo {
-		width: 50px;
-		margin-top: 20px;
-		margin-bottom: 42px;
-
-		img {
-			width: inherit;
+		.toggle-button {
+			top: 70px;
+			transform: rotate(180deg);
 		}
-	}
 
-	.buttons-wrapper {
-		.menu-button {
-			justify-content: center;
+		.logo {
+			width: 50px;
+			margin-top: 20px;
+			margin-bottom: 42px;
 
-			.button-icon {
-				margin-left: 0;
-			}
-
-			.button-label {
-				display: none;
-			}
-
-			.selected-icon {
-				display: none;
+			img {
+				width: inherit;
 			}
 		}
-	}
 
-	.bottom-navbar {
-		visibility: hidden;
+		.buttons-wrapper {
+			.menu-button {
+				justify-content: center;
+
+				.button-icon {
+					margin-left: 0;
+				}
+
+				.button-label {
+					display: none;
+				}
+
+				.selected-icon {
+					display: none !important;
+				}
+			}
+		}
+
+		.bottom-navbar {
+			visibility: hidden;
+		}
 	}
 }

@@ -1,0 +1,129 @@
+@import "./constants.scss";
+
+.standings {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 0;
+
+	.table {
+		width: 50%;
+		border: none !important;
+		border-spacing: 0 10px !important;
+
+		th {
+			padding: 15px 10px;
+			font-size: 24px;
+			text-align: left;
+		}
+
+		td {
+			padding: 10px;
+			background-color: rgb(34, 34, 34);
+			border: none !important;
+			outline: none !important;
+
+			.icon {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		td:first-child {
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+
+		td:last-child {
+			border-top-right-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+
+		tbody {
+			tr {
+				border-radius: 10px;
+
+				&.first {
+					font-weight: 700;
+
+					td {
+						padding: 30px 10px;
+					}
+				}
+
+				&.second {
+					td {
+						padding: 20px 10px;
+					}
+				}
+
+				&:hover {
+					cursor: pointer;
+					box-shadow: 0 0 0 0.2rem rgba(238, 0, 0, 0.25);
+				}
+			}
+		}
+
+		.table-row {
+			padding: 10px;
+			font-size: 24px;
+
+			.driver-code::before {
+				content: "";
+				width: 8px;
+				height: 30px;
+				display: inline-block;
+				position: relative;
+				border-radius: 2px;
+				margin-right: 12px;
+				margin-bottom: -7px;
+			}
+
+			.mercedes::before {
+				background-color: $mercedes;
+			}
+
+			.alfa::before {
+				background-color: $alfa-romeo;
+			}
+
+			.ferrari::before {
+				background-color: $ferrari;
+			}
+
+			.haas::before {
+				background-color: $haas;
+			}
+
+			.mclaren::before {
+				background-color: $mclaren;
+			}
+
+			.racing_point::before {
+				background-color: $racing-points;
+			}
+
+			.red_bull::before {
+				background-color: $red-bull;
+			}
+
+			.renault::before {
+				background-color: $renault;
+			}
+
+			.williams::before {
+				background-color: $williams;
+			}
+
+			.alphatauri::before {
+				background-color: $alphatauri;
+			}
+
+			.position {
+				text-align: center;
+			}
+		}
+	}
+}
