@@ -24,6 +24,8 @@ interface MenuButton {
 interface NavBarProps {
 	toggled: boolean;
 	onClick: () => {};
+	isTablet: any;
+	isMobile: any;
 }
 
 const mainMenuButtons = [
@@ -36,17 +38,19 @@ const mainMenuButtons = [
 	{ icon: <AiOutlineDoubleRight />, label: "Races", link: "/races" },
 ];
 
-export const NavBar = ({ toggled, onClick }: NavBarProps) => {
+export const NavBar = ({ isMobile, isTablet, toggled, onClick }: NavBarProps) => {
 	return (
 		<div className={"navbar" + (toggled ? " toggled" : "")}>
-			<div
-				className="toggle-button"
-				onClick={() => {
-					onClick();
-				}}
-			>
-				<AiOutlineLeft />
-			</div>
+			{!isTablet && (
+				<div
+					className="toggle-button"
+					onClick={() => {
+						onClick();
+					}}
+				>
+					<AiOutlineLeft />
+				</div>
+			)}
 			<div className="logo">
 				<img src={Logo} alt="Logo" />
 			</div>

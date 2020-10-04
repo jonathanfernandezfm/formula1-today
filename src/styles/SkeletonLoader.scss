@@ -1,0 +1,32 @@
+.skeleton-loader {
+	background-color: #272727;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+	margin: 4px 0;
+}
+
+.skeleton-loader::after {
+	background: linear-gradient(
+		90deg,
+		hsla(0, 0%, 100%, 0),
+		hsla(0, 0%, 100%, 0.3),
+		hsla(0, 0%, 100%, 0)
+	);
+
+	animation: loading 1.5s infinite;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: translateX(-100%);
+	z-index: 1;
+}
+
+@keyframes loading {
+	to {
+		transform: translateX(100%);
+	}
+}

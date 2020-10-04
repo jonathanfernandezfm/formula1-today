@@ -2,9 +2,11 @@
 	.layout-content {
 		height: inherit;
 		padding-left: 300px;
+		transition: 0.3s all;
 
 		&.toggled {
 			padding-left: 70px;
+			transition: 0.3s all;
 		}
 	}
 }

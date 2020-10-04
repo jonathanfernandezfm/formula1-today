@@ -5,6 +5,20 @@
 	justify-content: center;
 	height: 100vh;
 
+	.back {
+		margin-right: 670px;
+		margin-bottom: 12px;
+		font-size: 26px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		&:hover {
+			cursor: pointer;
+			color: #fd3131;
+		}
+	}
+
 	.driver-card {
 		background-color: #151515;
 		display: flex;

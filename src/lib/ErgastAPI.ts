@@ -33,7 +33,7 @@ export default class ErgastAPI {
 			.catch((error) => console.log(error));
 	}
 
-	driver(id: string): Promise<Driver> {
+	driver(id?: string): Promise<Driver> {
 		return fetch(`http://ergast.com/api/f1/drivers/${id}.json`, {
 			method: "GET",
 			headers: new Headers({
@@ -43,6 +43,20 @@ export default class ErgastAPI {
 			.then((response) => response.json())
 			.then((response) => {
 				return response.MRData.DriverTable.Drivers[0];
+			})
+			.catch((error) => console.log(error));
+	}
+
+	drivers(): Promise<Driver[]> {
+		return fetch(`http://ergast.com/api/f1/current/drivers.json`, {
+			method: "GET",
+			headers: new Headers({
+				Accept: "application/json",
+			}),
+		})
+			.then((response) => response.json())
+			.then((response) => {
+				return response.MRData.DriverTable.Drivers;
 			})
 			.catch((error) => console.log(error));
 	}
