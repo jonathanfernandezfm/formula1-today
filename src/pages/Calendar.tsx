@@ -73,7 +73,7 @@ export const Calendar = () => {
 						? loading
 							? [...Array(5)].map((x, i) => (
 									<tr key={i}>
-										<td colSpan={5}>
+										<td className={'loading-td'} colSpan={5}>
 											<SkeletonLoader height={50} />
 										</td>
 									</tr>

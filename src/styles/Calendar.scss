@@ -38,6 +38,10 @@
 					color: #fd3131;
 				}
 			}
+
+			&.loading-td {
+				padding: 0;
+			}
 		}
 
 		td:first-child {
